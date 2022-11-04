@@ -1,0 +1,20 @@
+body{
+    background: #a69cbe;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b3a1cd, #aea4c6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #9485a8, #aea4c6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#cont{
+    background: rgb(119, 97, 119);
+}
+
+#id{
+    background: #d3cbe4;  
+}
+
+#hey{
+    background: rgba(100, 56, 100, 0.4);
+}
+
+#pie{
+    background: rgb(205, 162, 205);
+}
