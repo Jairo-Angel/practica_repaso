@@ -18,7 +18,8 @@ class ControladorVistas extends Controller
 
     public function procesarLibro(ValidadorLibro $req){
         
-        return redirect('Registro')->with('Confirmacion','Datos recibidos correctamente');
+        $tit = $req->input('txtTitulo');
+        return redirect('Registro')->with('Confirmacion','Datos recibidos correctamente')->with('titulo', $tit);
     }
     
 }
