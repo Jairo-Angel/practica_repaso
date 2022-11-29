@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Http\Request\ValidadorLibro;
 use DB;
 use Carbon\Carbon;
-
-class Controladorbd extends Controller
+class ControladorAutores extends Controller
 {
-   
+    
     public function index()
     {
         //
     }
 
-   
+    
     public function create()
     {
         //
@@ -27,7 +27,7 @@ class Controladorbd extends Controller
         //
     }
 
-    
+   
     public function show($id)
     {
         //
@@ -39,13 +39,13 @@ class Controladorbd extends Controller
         //
     }
 
-   
     
     public function update(Request $request, $id)
     {
         //
     }
 
+   
     public function destroy($id)
     {
         //
