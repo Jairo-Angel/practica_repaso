@@ -18,7 +18,12 @@ Route::get('/Principal', [ControladorVistas::class,'showPrincipal'])->name('apod
 
 Route::get('/Registro', [ControladorVistas::class,'showRegistro'])->name('apodoRegistro');
 
+Route::get('/Registro_autores', [ControladorVistas::class,'showRegistro_autores'])->name('apodoRegistro_autores');
+
 Route::post('GuardarLibro', [ControladorVistas::class,'procesarLibro'])->name('guarda');
+
+Route::post('GuardarAutor', [ControladorVistas::class,'procesarAutor'])->name('guarda_autor');
+
 
 Route::get('/Prueba',function() {
     view('prueba');
