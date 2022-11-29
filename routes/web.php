@@ -14,7 +14,7 @@ use App\Http\Controllers\ControladorVistas;
 |
 */
 
-Route::get('/Principal', [ControladorVistas::class,'showPrincipal'])->name('apodoPrincipal');
+Route::get('/', [ControladorVistas::class,'showPrincipal'])->name('apodoPrincipal');
 
 Route::get('/Registro', [ControladorVistas::class,'showRegistro'])->name('apodoRegistro');
 
