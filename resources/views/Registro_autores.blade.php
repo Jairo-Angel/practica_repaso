@@ -1,23 +1,7 @@
 @extends('Plantilla')
 
 @section('contenido')
-    @if(session()->has('confirmacion'))
-    <?php
 
-    $Nom = session()->get('txtNombre_autor');
-    
-    ?>
-
-
-        
-        <div class="alert alert-success" role="alert">
-            <p clas="">Autor {{$Nom}} guardado </p>
-        </div>
-      
-      
-      
-        
-    @endif
 
 <div class="container mt-5 col-md-5 " id="cont">
       
@@ -39,7 +23,7 @@
     @endif
         <div class="card-body text-center">
 
-            <form class="m-4" method="post" action="GuardarAutor" >
+            <form class="m-4" method="post" action="{{route('autor.store')}}" >
                 @csrf
                 <div class="mb-3">
                     <label class="form-label text-white fw-semibold"> Nombre completo: </label>

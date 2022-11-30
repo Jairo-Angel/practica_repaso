@@ -12,7 +12,8 @@ class Controladorbd extends Controller
    
     public function index()
     {
-        //
+        $ConsultaLibros= DB::table('tb__libros')->get();
+        return view('Libros',compact('ConsultaLibros'));
     }
 
    
@@ -24,7 +25,19 @@ class Controladorbd extends Controller
     
     public function store(Request $request)
     {
-        //
+        DB::table('tb__libros')->insert([
+            "isbn"=> $request->input('txtTitulo'),
+            "titulo"=> $request->input('txtRecuerdo'),
+            "autor"=> $request->input('txtTitulo'),
+            "numeropag"=> $request->input('txtRecuerdo'),
+            "editorial"=> $request->input('txtTitulo'),
+            "correo"=> $request->input('txtRecuerdo'),
+            "id_tb__autores"=> $request->input('txtRecuerdo'),
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
+        ]);
+
+        return redirect('recuerdo/create ')->with('Confirmacion','abc');
     }
 
     

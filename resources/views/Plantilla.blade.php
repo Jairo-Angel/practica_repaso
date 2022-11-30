@@ -25,9 +25,15 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/Registro">Registrar Libros</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Libros">Ver Libros</a>
+              </li>
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/Registro_autores">Registrar Autores</a>
+                <a class="nav-link active" aria-current="page" href={{route('autor.create')}}>Registrar Autores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Autores">Ver Autores</a>
               </li>
 
             </ul>

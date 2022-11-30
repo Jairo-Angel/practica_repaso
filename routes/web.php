@@ -22,41 +22,47 @@ Route::get('/Registro', [ControladorVistas::class,'showRegistro'])->name('apodoR
 
 Route::get('/Registro_autores', [ControladorVistas::class,'showRegistro_autores'])->name('apodoRegistro_autores');
 
+Route::get('/Libros', [ControladorVistas::class,'showLibros'])->name('apodoLibro');
+
+Route::get('/Autores', [ControladorVistas::class,'showAutores'])->name('apodoAutor');
+
 //Route::post('GuardarLibro', [ControladorVistas::class,'procesarLibro'])->name('guarda');
 
 //Route::post('GuardarAutor', [ControladorVistas::class,'procesarAutor'])->name('guarda_autor');
 
 //Create
 
-Route::get('libro/create', [controladorbd::class,'create'])->name('libro.create');
+Route::get('libro/create', [Controladorbd::class,'create'])->name('libro.create');
 
 //Store
 
-Route::post('libro', [controladorbd::class,'store'])->name('libro.store');
+Route::post('libro', [Controladorbd::class,'store'])->name('libro.store');
 
-Route::get('libro', [controladorbd::class,'index'])->name('libro.index');
+Route::get('libro', [Controladorbd::class,'index'])->name('libro.index');
 //Edit
-Route::get('libro/{id}/edit', [controladorbd::class,'edit'])->name('libro.edit');
+Route::get('libro/{id}/edit', [Controladorbd::class,'edit'])->name('libro.edit');
 //Update
-Route::put('libro/{id}', [controladorbd::class,'update'])->name('libro.update');
+Route::put('libro/{id}', [Controladorbd::class,'update'])->name('libro.update');
 //show
-Route::get('libro/{id}/show', [controladorbd::class,'show'])->name('libro.show');
+Route::get('libro/{id}/show', [Controladorbd::class,'show'])->name('libro.show');
 //Destroy
-Route::delete('libro/{id}', [controladorbd::class,'destroy'])->name('libro.destroy');
+Route::delete('libro/{id}', [Controladorbd::class,'destroy'])->name('libro.destroy');
 
-Route::get('libro/create', [controladorbd::class,'create'])->name('libro.create');
+Route::get('libro/create', [Controladorbd::class,'create'])->name('libro.create');
 
 //Store
 
-Route::post('autor', [controladorbd::class,'store'])->name('autor.store');
+Route::post('autor', [ControladorAutores::class,'store'])->name('autor.store');
 
-Route::get('autor', [controladorbd::class,'index'])->name('autor.index');
+Route::get('autor', [ControladorAutores::class,'index'])->name('autor.index');
 //Edit
-Route::get('autor/{id}/edit', [controladorbd::class,'edit'])->name('autor.edit');
+Route::get('autor/{id}/edit', [ControladorAutores::class,'edit'])->name('autor.edit');
 //Update
-Route::put('autor/{id}', [controladorbd::class,'update'])->name('autor.update');
+Route::put('autor/{id}', [ControladorAutores::class,'update'])->name('autor.update');
 //show
-Route::get('autor/{id}/show', [controladorbd::class,'show'])->name('autor.show');
+Route::get('autor/{id}/show', [ControladorAutores::class,'show'])->name('autor.show');
 //Destroy
-Route::delete('autor/{id}', [controladorbd::class,'destroy'])->name('autor.destroy');
+Route::delete('autor/{id}', [ControladorAutores::class,'destroy'])->name('autor.destroy');
+
+Route::get('autor/create', [ControladorAutores::class,'create'])->name('autor.create');
 
