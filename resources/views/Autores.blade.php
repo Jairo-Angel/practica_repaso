@@ -27,11 +27,19 @@
             'success'
         ) </script> "!!}
 
-       
-
-
-         
     @endif
+
+    @if(session()->has('Actualizado'))
+            
+    
+    {!!"<script>  Swal.fire(
+        'Todo correcto!',
+        'Autor Actualizado!',
+        'success'
+    ) </script> "!!}
+
+    @endif
+
     <div class="mb-5">
         <h1 class="text-center fw-bold">Autores</h1>
     </div>

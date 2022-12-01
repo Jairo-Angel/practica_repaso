@@ -14,14 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb__libros', function (Blueprint $table) {
-            $table->increments('idLibro');
+            $table->id('idLibro');
+            $table->unsignedBigInteger('id_Autor');
             $table->string('isbn');
             $table->string('titulo');
-            $table->string('autor');
+            
             $table->string('numeropag');
             $table->string('editorial');
             $table->string('correo');
-            $table->foreignId('id_tb__autores')->constrained('tb__autores');
+            $table->foreign('id_Autor')->references('id')->on('tb__autores')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

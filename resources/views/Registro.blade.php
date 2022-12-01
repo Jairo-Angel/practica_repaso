@@ -4,12 +4,12 @@
 @if(session()->has('Confirmacion'))
 <?php
 
-$libro = session()->get('titulo');
+$tit = session()->get('titulo');
     
 ?>
        {!!"<script>  Swal.fire(
          'Todo correcto!',
-         'El libro ¨{$libro}¨ Guardado!',
+         'El libro ¨{$tit}¨ Guardado!',
          'success'
        ) </script> "!!}
     @endif
@@ -29,7 +29,7 @@ $libro = session()->get('titulo');
 @endif
         <div class="card-body text-center">
 
-            <form class="m-4" method="post" action="GuardarLibro" >
+            <form class="m-4" method="post" action="{{route('libro.store')}}">
                 @csrf
                 <div class="mb-3">
                     <label class="form-label text-white fw-semibold"> ISBN: </label>
@@ -43,8 +43,13 @@ $libro = session()->get('titulo');
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-white fw-semibold"> Autor: </label>
-                    <input type="text" class="form-control" name="txtAutor" id="id" value="{{old('txtAutor')}}" placeholder="Autor del libro">
-                    <p class="text-dark fst-italic fw-bold"> {{ $errors->first('txtAutor') }}</p>
+                    <select name="txtAutor" id="unos" class="form-control" style="background: #d3cbe4;" >
+                        <option selected disabled="disabled" value="" style="background: #d3cbe4">Selecciona Autor:</option>
+                        @foreach ($ConsultaAutores as $autor)
+                            <option value="{{$autor->id}}">{{$autor->nombre}}</option>
+                            
+                        @endforeach
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-white fw-semibold"> Numero de Páginas: </label>
