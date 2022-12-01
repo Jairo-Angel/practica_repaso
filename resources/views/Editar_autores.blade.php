@@ -19,17 +19,17 @@
             {!!method_field('PUT')!!}
 
             <div class="mb-3">
-                <label class="form-label text-white fw-semibold"> Nombre completo: </label>
+                <label class="form-label  fw-semibold"> Nombre completo: </label>
                 <input type="text" class="form-control" name="txtNombre_autor" id="id" value="{{$row->nombre}}" placeholder="Nombre completo" >
                 <p class="text-dark fst-italic fw-bold"> {{ $errors->first('txtNombre_autor') }}</p>
             </div>
             <div class="mb-3">
-                <label class="form-label text-white fw-semibold"> Fecha de nacimiento: </label>
+                <label class="form-label  fw-semibold"> Fecha de nacimiento: </label>
                 <input type="date" class="form-control" name="txtFecha_Nacimiento" id="id" value="{{$row->fecha_nac}}" placeholder="Fecha de nacimiento">
                 <p class="text-dark fst-italic fw-bold"> {{ $errors->first('txtFecha_Nacimiento') }}</p>
             </div>
             <div class="mb-3">
-                <label class="form-label text-white fw-semibold"> No. libros publicados: </label>
+                <label class="form-label  fw-semibold"> No. libros publicados: </label>
                 <input type="text" class="form-control" name="Libros" id="id" value="{{$row->numero_libros}}" placeholder="No. libros publicados">
                 <p class="text-dark fst-italic fw-bold"> {{ $errors->first('Libros') }}</p>
             </div>
