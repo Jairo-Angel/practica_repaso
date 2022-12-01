@@ -40,24 +40,35 @@ class ControladorAutores extends Controller
    
     public function show($id)
     {
-        //
+        $consultaId= DB::table('tb__autores')->where('id',$id)->first();
+        return view('Eliminar_autores', compact('consultaId'));
     }
 
     
     public function edit($id)
     {
-        //
+        $consultaId= DB::table('tb__autores')->where('id',$id)->first();
+        return view('Editar_autores', compact('consultaId'));
     }
 
     
     public function update(Request $request, $id)
     {
-        //
+        DB::table('tb__autores')->where('id', $id)->update([
+
+            "nombre"=> $request->input('txtNombre_autor'),
+            "fecha_nac"=> $request->input('txtFecha_Nacimiento'),
+            "numero_libros"=> $request->input('Libros'),
+
+            "updated_at"=> Carbon::now()
+        ]);
+        return redirect('autor')->with('Actualizado','abc');
     }
 
    
     public function destroy($id)
     {
-        //
+        DB::table('tb__autores')->where('id', $id)->delete();
+        return redirect('autor')->with('Eliminado','abc');
     }
 }
